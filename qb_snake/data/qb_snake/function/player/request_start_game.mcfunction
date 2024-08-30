@@ -19,12 +19,4 @@ execute if entity @a[team=Blue] run scoreboard players add numTeams globals 1
 execute if score numTeams globals matches 0 run tellraw @s [{"text":"\n⚠ At least 1 active player is required!\n","color":"red"}]
 execute if score numTeams globals matches 0 run return 0
 
-# Clean up the previous game
-function qb_snake:reset
-
-# Setup snake(s)
-execute if entity @a[team=Red] positioned -8 -31 0 run function qb_snake:snake/create_snake {team: 1}
-execute if entity @a[team=Blue] positioned 8 -31 0 run function qb_snake:snake/create_snake {team: 2}
-
-# Start the countdown
-function qb_snake:countdown/start_countdown
+function qb_snake:start_game
