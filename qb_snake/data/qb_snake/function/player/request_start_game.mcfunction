@@ -23,9 +23,5 @@ execute if score numTeams globals matches 0 run return 0
 execute if score numTeams globals matches 1.. positioned -8 -31 0 run function qb_snake:snake/create_snake {team: 1}
 execute if score numTeams globals matches 2.. positioned 8 -31 0 run function qb_snake:snake/create_snake {team: 2}
 
-# Unpause
-scoreboard players set paused globals 0
-
 # Play a sound
-# TODO: Add a countdown
-playsound minecraft:entity.firework_rocket.launch player @s ~ ~ ~
+function qb_snake:countdown/start_countdown
