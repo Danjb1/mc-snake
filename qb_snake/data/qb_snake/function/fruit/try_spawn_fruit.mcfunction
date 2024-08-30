@@ -5,8 +5,14 @@ execute store result entity @s Pos[2] double 1 run random value -17..17
 # Center ourselves in the new block
 execute at @s run tp ~0.5 ~ ~0.5
 
-# Ensure the block is empty
+# Ensure this block is empty
 execute at @s unless block ~ ~ ~ minecraft:air run return 0
+
+# Don't place right next to a wall
+execute at @s if block ~-1 ~ ~ minecraft:white_concrete run return 0
+execute at @s if block ~ ~ ~-1 minecraft:white_concrete run return 0
+execute at @s if block ~1 ~ ~ minecraft:white_concrete run return 0
+execute at @s if block ~ ~ ~1 minecraft:white_concrete run return 0
 
 # Ensure we are not too close to a snake head
 execute at @s if entity @e[type=minecraft:marker,tag=snake,tag=head,distance=..4] run return 0

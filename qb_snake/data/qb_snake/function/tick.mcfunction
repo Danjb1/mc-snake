@@ -13,6 +13,9 @@ execute as @e[type=minecraft:marker,tag=snake,tag=head] at @s run function qb_sn
 # Spawn fruit (if none present)
 execute unless entity @e[type=minecraft:item_display,tag=fruit] as @e[type=minecraft:marker,tag=fruitMarker,limit=1] at @s run function qb_snake:fruit/try_spawn_fruit
 
+# Spawn walls
+execute as @e[type=minecraft:marker,tag=wallMarker,limit=1] at @s run function qb_snake:walls/tick_wall_marker
+
 # DEBUG
 #execute at @e[type=minecraft:marker,tag=collisionMarker] run particle flame ~ ~1 ~ 0 0 0 0 5 force
 #execute at @e[type=minecraft:marker,tag=head] run particle minecraft:composter ~ ~1 ~ 0 0 0 0 5 force

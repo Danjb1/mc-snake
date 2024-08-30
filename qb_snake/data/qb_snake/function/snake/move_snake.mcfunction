@@ -1,3 +1,6 @@
+# IMPORTANT: We have just moved, so reset the move timer
+scoreboard players reset @s moveTimer
+
 # Create a "pending tail" entity at our current location, and assign it to our team
 summon minecraft:marker ~ ~ ~ {Tags:[snake,pendingTail]}
 execute store result score @e[type=minecraft:marker,tag=pendingTail,limit=1] team run scoreboard players get @s team
@@ -21,6 +24,3 @@ execute at @s run function qb_snake:snake/on_snake_moved
 # Now we can safely convert the pending tail to a real tail entity
 tag @e[type=minecraft:marker,tag=pendingTail,limit=1] add tail
 tag @e[type=minecraft:marker,tag=pendingTail,limit=1] remove pendingTail
-
-# We have just moved, so reset the move timer
-scoreboard players reset @s moveTimer

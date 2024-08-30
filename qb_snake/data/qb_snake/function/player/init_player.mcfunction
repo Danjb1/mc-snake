@@ -2,7 +2,7 @@
 tag @s add playerInit
 
 # Make players invisible so they don't block each other's view
-effect give @a minecraft:invisibility infinite 1 true
+effect give @s minecraft:invisibility infinite 1 true
 
 # Adventure mode so no-one breaks anything
 gamemode adventure @s
@@ -12,3 +12,5 @@ scoreboard players enable @s joinRedTrigger
 scoreboard players enable @s joinBlueTrigger
 scoreboard players enable @s startGameTrigger
 scoreboard players enable @s leaveTeamTrigger
+
+function qb_snake:player/display_welcome_message
