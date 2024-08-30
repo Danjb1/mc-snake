@@ -29,12 +29,7 @@ team modify Blue collisionRule never
 team modify Blue color blue
 team modify Blue nametagVisibility never
 
-# Clean up
-kill @e[type=minecraft:marker,tag=snake]
-kill @e[type=minecraft:marker,tag=collisionMarker]
-kill @e[type=minecraft:block_display,tag=headAnim]
-kill @e[type=minecraft:block_display,tag=tailAnim]
-fill -24 -31 -18 24 -31 18 minecraft:air replace
+# Reset teams
 execute as @a run function qb_snake:teams/leave_team
 
 # Pause the game
