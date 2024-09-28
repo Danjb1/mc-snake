@@ -19,6 +19,10 @@ scoreboard objectives add joinBlueTrigger trigger
 scoreboard objectives add leaveTeamTrigger trigger
 scoreboard objectives add startGameTrigger trigger
 
+# World setup
+time set noon
+gamerule doDaylightCycle false
+
 # Team setup
 team add Red [{"text":"Red","color":"red"}]
 team modify Red collisionRule never

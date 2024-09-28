@@ -1,5 +1,5 @@
 # Grow the tail
-scoreboard players add @e[type=minecraft:marker,tag=currentSnake,limit=1] lastTailIndex 1
+scoreboard players add @e[type=minecraft:marker,tag=currentSnake,limit=1] lastTailIndex 5
 
 # Remove the fruit
 kill @e[type=minecraft:item_display,tag=fruit,distance=..0.5,limit=1]
